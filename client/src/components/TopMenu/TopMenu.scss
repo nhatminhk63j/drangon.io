@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.topmenu__back{
+    background-color: #761CAD;
+    color: #fff;
+}
+
+.topmenu__logo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.user__avatar__img{
+    border: 5px solid rgba($color: #f8efef, $alpha: 1.0);
+    border-radius: 50%;
+}
+
+.user__name{
+    margin: 0 10px;
+}
+
+.user__icon{
+    font-size: 1.3rem;
+}
