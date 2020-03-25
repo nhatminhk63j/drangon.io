@@ -8,15 +8,8 @@ class DoardBoard extends Component {
         return (
             <div>
                 <TopMenu />
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-3">
-                            <SideBarMenu />
-                        </div>
-                        <div className="col-md-9">
-                            <ListGame category="Decimal fractions and percentage" />
-                        </div>
-                    </div>
+                <div className="container d-flex">
+                    <SideBarMenu />
                 </div>
             </div>
         );
