@@ -6,9 +6,9 @@ class SideBarMenu extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="sidebar">
-                    <h3 className="text-center">My courses</h3>
-                    <nav className="sidebar__menu">
+                <div className="sidebar text-center">
+                    <h4>My courses</h4>
+                    <nav className="sidebar__menu text-left">
                         <NavLink exact={true} activeClassName='sidebar__link--active' className="sidebar__link" to="/number">Numbers</NavLink>
                         <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/fractions">Fractions</NavLink>
                         <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/decimal-fractions-and-percentage">Decimal fractions and percentage</NavLink>
