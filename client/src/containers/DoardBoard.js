@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TopMenu from '../components/TopMenu/TopMenu';
 import SideBarMenu from '../components/SideBarMenu/SideBarMenu';
-import ListGame from '../components/ListGame/ListGame';
 
 class DoardBoard extends Component {
     render() {
