@@ -102,7 +102,7 @@ class WriteFractionPicture extends Component {
                             <img src={ this.state.status < 5 ? this.state.data[this.state.status].img : ''} height="200px" alt=""/> 
                             <div className="d-flex flex-column">
                                 <div className="numerator fraction">
-                                    <input type="text" id="ts" style={this.state.styleWrongTop.color} />
+                                    <input type="text" id="ts" style={this.state.styleWrongTop.color} autocomplete="off"/>
                                     <div className="alert alert-top" style={this.state.styleWrongTop.alert}>
                                         How many parts are shaded?
                                         <div className="triangle"></div>
@@ -110,7 +110,7 @@ class WriteFractionPicture extends Component {
                                 </div>
                                 <div className="underline">---------</div>
                                 <div className="denominator  fraction">
-                                    <input type="text" id="ms" style={this.state.styleWrongBottom.color} />
+                                    <input type="text" id="ms" style={this.state.styleWrongBottom.color} autocomplete="off"/>
                                     <div className="alert alert-bottom"  style={this.state.styleWrongBottom.alert}>
                                         How many parts is the figure divided into? 
                                         <div className="triangle"></div>
