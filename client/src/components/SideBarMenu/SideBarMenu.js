@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import './SideBarMenu.scss';
 import DecimalFractionsAndPercentage from '../../containers/DecimalFractionsAndPercentage';
 import WriteFractionPicture from '../../containers/WriteFractionPicture/WriteFractionPicture';

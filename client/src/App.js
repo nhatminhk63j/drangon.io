@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
 import DoardBoard from './containers/DoardBoard';
-import { Route, Switch } from 'react-router-dom'
-import WriteFractionPicture from './containers/WriteFractionPicture/WriteFractionPicture';
+import { Route, Switch } from 'react-router-dom';
 
 
 function App() {

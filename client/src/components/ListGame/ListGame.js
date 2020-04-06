@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './ListGame.scss';
 import GameItem from './GameItem/GameItem';
-import { BrowserRouter, Route } from 'react-router-dom';
-import WriteFractionPicture from '../../containers/WriteFractionPicture/WriteFractionPicture';
+import { BrowserRouter } from 'react-router-dom';
 
 class ListGame extends Component {
     constructor(props){
