@@ -10,5 +10,7 @@ cd client --> npm install --> npm start
 cd server --> npm install --> npm start
 
 Server : NodeJS + Express
+
 Client: ReactJs (react-boostrap 4.0, Fontawesome, React Dnd Beautiful) style using Sass/Scss
+
 Database: MongoDB
