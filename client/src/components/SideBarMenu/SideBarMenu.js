@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 import './SideBarMenu.scss';
-import DecimalFractionsAndPercentage from '../../containers/DecimalFractionsAndPercentage';
-import WriteFractionPicture from '../../containers/WriteFractionPicture/WriteFractionPicture';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+
 
 
 class SideBarMenu extends Component {
     render() {
         return (
-            <BrowserRouter>
                 <div className="sidebar">
-                    <h4>My courses </h4> 
-                    <nav className="sidebar__menu text-left">
-                        <NavLink exact={true} activeClassName='sidebar__link--active' className="sidebar__link" to="/number">Numbers</NavLink>
-                        <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/fractions">Fractions</NavLink>
-                        <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/decimal-fractions-and-percentage">Decimal fractions and percentage</NavLink>
-                        <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/measurement">Measurement</NavLink>
-                        <NavLink activeClassName='sidebar__link--active' className="sidebar__link" to="/data-handing">Data handing</NavLink>
+                    <h5><FontAwesomeIcon icon={faGraduationCap} /> My courses </h5> 
+                    <nav className="navbar">
+                        <ul className="sidebar__menu text-left nav navbar-nav">
+                            <li className="nav-item">
+                                <a className="sidebar__link" href="/number">Numbers</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="sidebar__link" href="/fractions">Fractions</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="sidebar__link active" href="/decimal-fractions-and-percentage">Decimal fractions and percentage</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="sidebar__link" href="/measurement">Measurement</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="sidebar__link" href="/data-handing">Data handing</a>
+                            </li>
+                        </ul>
                     </nav>
-
-                    <Route exact path="/decimal-fractions-and-percentage" component={DecimalFractionsAndPercentage}></Route>
-                    <Route exact path="/write-the-fraction-according-to-the-picture" component={WriteFractionPicture} />
                 </div>
-            </BrowserRouter>
         );
     }
 }

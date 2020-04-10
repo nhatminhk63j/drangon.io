@@ -3,7 +3,6 @@ import BackgroundGame from '../../components/BackgroundGame/BackgroundGame';
 import './WriteFractionPicture.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
-import { Redirect } from 'react-router-dom';
 
 class WriteFractionPicture extends Component {
     constructor(props){
@@ -11,33 +10,7 @@ class WriteFractionPicture extends Component {
 
         this.state = {
             status: 0,
-            data: [
-                {
-                    img: "https://content.dragonlearn.in/98360/3338/197.svg",
-                    ts: 3,
-                    ms: 5
-                },
-                {
-                    img: "https://content.dragonlearn.in/98360/3338/100.svg",
-                    ts: 1,
-                    ms: 5
-                },
-                {
-                    img: "https://content.dragonlearn.in/98360/3338/101.svg",
-                    ts: 1,
-                    ms: 5
-                },
-                {
-                    img: "https://content.dragonlearn.in/98360/3338/102.svg",
-                    ts: 1,
-                    ms: 5
-                },
-                {
-                    img: "https://content.dragonlearn.in/98360/3338/103.svg",
-                    ts: 1,
-                    ms: 5
-                }
-            ],
+            data: dataFromBackend,
             styleWrongTop: { alert: { display: "none" }, color: { color: "black" }
             },
             styleWrongBottom: { alert: { display: "none" }, color: { color: "black" } },
@@ -51,12 +24,12 @@ class WriteFractionPicture extends Component {
         const {status, data} = this.state;
         var ts = parseInt(document.getElementById('ts').value);
         var ms = parseInt(document.getElementById('ms').value);
-        if(ts != data[status].ts){
+        if(ts !== data[status].ts){
             this.setState({styleWrongTop: {alert: { display: "block"}, color: { color: "red"}}});
         } else {
             this.setState({styleWrongTop: {alert: { display: "none"}, color: { color: "black"}}});
         }
-        if(ms != data[status].ms){
+        if(ms !== data[status].ms){
             this.setState({styleWrongBottom: {alert: { display: "block"}, color: { color: "red"}}})
         } else {
             this.setState({styleWrongBottom: {alert: { display: "none"}, color: { color: "black"}}})
@@ -125,5 +98,33 @@ class WriteFractionPicture extends Component {
         );
     }
 }
+
+const dataFromBackend = [
+    {
+        img: "https://content.dragonlearn.in/98360/3338/197.svg",
+        ts: 3,
+        ms: 5
+    },
+    {
+        img: "https://content.dragonlearn.in/98360/3338/100.svg",
+        ts: 1,
+        ms: 5
+    },
+    {
+        img: "https://content.dragonlearn.in/98360/3338/101.svg",
+        ts: 1,
+        ms: 5
+    },
+    {
+        img: "https://content.dragonlearn.in/98360/3338/102.svg",
+        ts: 1,
+        ms: 5
+    },
+    {
+        img: "https://content.dragonlearn.in/98360/3338/103.svg",
+        ts: 1,
+        ms: 5
+    }
+]
 
 export default WriteFractionPicture;

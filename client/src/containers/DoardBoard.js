@@ -7,8 +7,15 @@ class DoardBoard extends Component {
         return (
             <div>
                 <TopMenu />
-                <div className="container d-flex">
-                    <SideBarMenu />
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-5">
+                            <SideBarMenu />
+                        </div>
+                        <div className="col-md-7">
+                        {this.props.children}
+                        </div>
+                    </div>
                 </div>
             </div>
         );

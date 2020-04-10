@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import ListGame from '../components/ListGame/ListGame';
+import DoardBoard from './DoardBoard';
 
 class DecimalFractionsAndPercentage extends Component {
     
     render() {
         return (
-            <ListGame category="Decimal fractions and percentage"/>
+            <DoardBoard>
+                <ListGame category="Decimal fractions and percentage"/>
+            </DoardBoard>
         );
     }
 }
