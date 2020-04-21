@@ -64,7 +64,8 @@ class WriteFractionPicture extends Component {
                     <div className="game-complete"  style={this.state.status >= 5 ? {} : {display: "none"}}>
                         <div className="d-flex flex-column justify-content-center align-items-center">
                             <h1 style={{padding: 50}}>You are win!</h1>
-                            <button className="btn btn-danger"><a href="/decimal-fractions-and-percentage" style={{color: "#fff"}}>Click here to more lession!</a></button>
+                            <img src="https://dragonlearn.in/assets/students/complete-card-21a84b96681981b0362780d2af61cf19.png" height="150px" alt=""/>
+                            <button className="btn btn-danger"><a href="/" style={{color: "#fff"}}>Click here to more lession!</a></button>
                         </div>
                     </div>
 

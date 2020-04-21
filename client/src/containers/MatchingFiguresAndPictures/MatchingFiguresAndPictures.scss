@@ -7,6 +7,7 @@
         padding: 0 !important;
         width: 50px;
         font-size: 3.3rem;
+        font-weight: 700;
     }
 
     .fraction {
@@ -19,7 +20,6 @@
             background-color: #c1e5b5;
             padding: 20px;
             color: rgb(37, 30, 30);
-            // font-weight: 600;
             font-size: 1.3rem;
             border-radius: 10px;
         }
@@ -58,7 +58,7 @@
 
 
     .fraction-ts {
-        border-bottom: 2px solid black;
+        border-bottom: 5px solid black;
     }
 
     button {

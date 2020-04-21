@@ -4,6 +4,7 @@ import BackgroundGame from '../../components/BackgroundGame/BackgroundGame';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
+
 class MatchingFiguresAndPictures extends Component {
     constructor(props){
         super(props);
@@ -80,9 +81,19 @@ class MatchingFiguresAndPictures extends Component {
                             })}
                         </div>
                     </div>
+
+                    {/* Ket thuc man choi */}
+                    <div className="game-complete"  style={this.state.status >= 5 ? {} : {display: "none"}}>
+                        <div className="d-flex flex-column justify-content-center align-items-center">
+                            <h1 style={{padding: 50}}>You are win!</h1>
+                            <img src="https://dragonlearn.in/assets/students/complete-card-21a84b96681981b0362780d2af61cf19.png" height="150px" alt=""/>
+                            <button className="btn btn-danger"><a href="/" style={{color: "#fff"}}>Click here to more lession!</a></button>
+                        </div>
+                    </div>
+
                     <div className="game-main text-center"  style={this.state.status < 5 ? {} : {display: "none"}}>
                         <h2>Choose all the shapes that match the fraction</h2>
-                        <div className="fraction d-flex align-items-center flex-column">
+                        {data[status] ? <div className="fraction d-flex align-items-center flex-column">
                             <h2 className="fraction-ts"> {data[status].ts} </h2>
                             <h2> {data[status].ms} </h2>
 
@@ -103,12 +114,12 @@ class MatchingFiguresAndPictures extends Component {
                             <div className="displayMorePictureTrue text-left"
                                 style={displayMoreValueTrue ? {display: 'block'} : {display: 'none'}}
                             >There are more<br />matching shapes than that!</div>
-                        </div>
+                        </div> : ''}
                         
                         {/* Load du lieu anh tu data backend ra man hinh */}
                         <div className="list-item">
                             {
-                                data[status].data.map((item, idx) => (
+                                data[status] ? data[status].data.map((item, idx) => (
                                     <div 
                                         className="matching-item"
                                         style={{backgroundImage: 'url(' + item.image + ')'}}
@@ -116,7 +127,7 @@ class MatchingFiguresAndPictures extends Component {
                                         id={item.id}
                                         key={idx}
                                     ></div>
-                                ))
+                                )) : ''
                             }
                         </div>
 
@@ -189,6 +200,99 @@ const dataFromBackend = [
                 image: 'https://content.dragonlearn.in/98360/3340/215.svg',
                 ts: 5,
                 ms: 6
+            }
+        ]
+    },
+    {
+        ts: 3,
+        ms: 5,
+        numberTrue: 2,
+        data: [
+            {
+                id: 'picture1',
+                image: 'https://content.dragonlearn.in/98360/3340/179.svg',
+                ts: 3,
+                ms: 4
+            },
+            {
+                id: 'picture2',
+                image: 'https://content.dragonlearn.in/98360/3340/205.svg',
+                ts: 4,
+                ms: 5
+            },
+            {
+                id: 'picture3',
+                image: 'https://content.dragonlearn.in/98360/3340/194.svg',
+                ts: 3,
+                ms: 5
+            },
+            {
+                id: 'picture4',
+                image: 'https://content.dragonlearn.in/98360/3340/196.svg',
+                ts: 3,
+                ms: 5
+            }
+        ]
+    },
+    {
+        ts: 3,
+        ms: 4,
+        numberTrue: 2,
+        data: [
+            {
+                id: 'picture1',
+                image: 'https://content.dragonlearn.in/98360/3340/177.svg',
+                ts: 3,
+                ms: 4
+            },
+            {
+                id: 'picture2',
+                image: 'https://content.dragonlearn.in/98360/3340/141.svg',
+                ts: 2,
+                ms: 5
+            },
+            {
+                id: 'picture3',
+                image: 'https://content.dragonlearn.in/98360/3340/125.svg',
+                ts: 2,
+                ms: 3
+            },
+            {
+                id: 'picture4',
+                image: 'https://content.dragonlearn.in/98360/3340/156.svg',
+                ts: 3,
+                ms: 4
+            }
+        ]
+    },
+    {
+        ts: 2,
+        ms: 5,
+        numberTrue: 3,
+        data: [
+            {
+                id: 'picture1',
+                image: 'https://content.dragonlearn.in/98360/3340/147.svg',
+                ts: 2,
+                ms: 5
+            },
+            {
+                id: 'picture2',
+                image: 'https://content.dragonlearn.in/98360/3340/127.svg',
+                ts: 2,
+                ms: 3
+            },
+            {
+                id: 'picture3',
+                image: 'https://content.dragonlearn.in/98360/3340/140.svg',
+                ts: 2,
+                ms: 5
+            },
+            {
+                id: 'picture4',
+                image: 'https://content.dragonlearn.in/98360/3340/145.svg',
+                ts: 2,
+                ms: 5
             }
         ]
     }
