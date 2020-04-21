@@ -11,8 +11,7 @@ class WriteFractionPicture extends Component {
         this.state = {
             status: 0,
             data: dataFromBackend,
-            styleWrongTop: { alert: { display: "none" }, color: { color: "black" }
-            },
+            styleWrongTop: { alert: { display: "none" }, color: { color: "black" }},
             styleWrongBottom: { alert: { display: "none" }, color: { color: "black" } },
             styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {left: 75}, {left: 100} ]
         }
@@ -54,7 +53,7 @@ class WriteFractionPicture extends Component {
             <BackgroundGame>
                 <div className="game-wrapper">
                     <div className="game-control">
-                        <a href="/decimal-fractions-and-percentage"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
+                        <a href="/"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
                         <div className="game-status">
                             {this.state.styleBall.map(style => {
                                 return <div className="ball" style={style}></div>

@@ -17,9 +17,14 @@ class ListGame extends Component {
                 name: "Write the fraction according to the picture",
                 img: 'https://dragonlearn.in/assets/card_previews/india/3338-e8888f047fdceedc9d3bc59af9da67b6.png'
             }, {
-                name: "Matching figures and baskets",
+                name: "Matching figures and pictures",
                 img: 'https://dragonlearn.in/assets/card_previews/india/3340-f4817e14bc729f1cfaad54e7d0582f06.png'
-            }]
+            },
+            {
+                name: "Equal fractions",
+                img: 'https://dragonlearn.in/assets/card_previews/2393-5539325521c4c6f705f3b73da8979b58.png'
+            }
+        ]
 
         }
     }

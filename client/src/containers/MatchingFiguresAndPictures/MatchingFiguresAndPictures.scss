@@ -1,0 +1,88 @@
+.matching-pictures {
+    h2 {
+        padding: 10px !important;
+    }
+    .fraction h2 {
+        margin: 0;
+        padding: 0 !important;
+        width: 50px;
+        font-size: 3.3rem;
+    }
+
+    .fraction {
+        position: relative;
+
+        .displayMorePictureTrue {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            background-color: #c1e5b5;
+            padding: 20px;
+            color: rgb(37, 30, 30);
+            // font-weight: 600;
+            font-size: 1.3rem;
+            border-radius: 10px;
+        }
+
+        .notify {
+            position: absolute;
+            right: 60px;
+            padding: 10px;
+            background-color: #c1e5b5;
+            width: 250px;
+            border-radius: 10px;
+
+            .arrow-left {
+                width: 0; 
+                height: 0; 
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent; 
+                
+                border-right:15px solid #c1e5b5; 
+                position: absolute;
+                top: 10px;
+                left: -10px;
+            }
+        }
+
+        .notify-ts {
+            top: -10px;
+            left: 55%;
+        }
+
+        .notify-ms {
+            top: 80px;
+            left: 55%;
+        }
+    }
+
+
+    .fraction-ts {
+        border-bottom: 2px solid black;
+    }
+
+    button {
+        margin-top: 50px !important;
+    }
+
+    .list-item {
+        height: 200px;
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .matching-item {
+        background-position: center;
+        background-repeat: no-repeat;
+        flex-grow: 1;
+        height: 200px;
+        margin: 0 20px;
+        border-radius: 20px;
+        background-color: #fff;
+        background-size: 150px 150px;
+        background-position: center;
+        cursor: pointer;
+    }
+}
