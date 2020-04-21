@@ -23,6 +23,9 @@ mongoose.connect(MONGO_URI, {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// app.use('/image',express.static(__dirname + '/public/image'));
+// app.use("/image", express.static(__dirname + "/public"));
+
 ///Game
 app.use("/game", game_router);
 game_router.post("/create_gdata", game_controller.create);
