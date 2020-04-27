@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import WriteFractionPicture from './containers/WriteFractionPicture/WriteFractionPicture';
 import DecimalFractionsAndPercentage from './containers/DecimalFractionsAndPercentage';
 import MatchingFiguresAndPictures from './containers/MatchingFiguresAndPictures/MatchingFiguresAndPictures';
+import Home from './containers/Home/Home';
 
 
 
@@ -12,7 +13,8 @@ function App() {
     <Switch>
       <Route exact path="/write-the-fraction-according-to-the-picture" component={WriteFractionPicture} />
       <Route exact path="/matching-figures-and-pictures" component={MatchingFiguresAndPictures} />
-      <Route exact path="/" component={DecimalFractionsAndPercentage} />
+      <Route exact path="/courses" component={DecimalFractionsAndPercentage} />
+      <Route exact path="/" component={Home} />
     </Switch>
   );
 }

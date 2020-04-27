@@ -1,4 +1,10 @@
-$body-bg: rgb(241, 236, 236);
+$body-bg: rgb(255, 255, 255);
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700&display=swap');
+
+body{
+    font-family: 'Baloo Bhaina 2', cursive;
+}
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

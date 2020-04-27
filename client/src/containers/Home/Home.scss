@@ -1,0 +1,158 @@
+.home {
+    background-color: #fff;
+    font-family: 'Baloo Bhaina 2', cursive;
+    &__header {
+        background-image: url(https://dragonlearn.in/assets/banners/quarantine-f8bba46b976fb25b4dc308238831e151.svg);
+        width: 100%;
+        height: 96px;
+        position: fixed;
+        z-index: 100;
+    }
+
+    button.register {
+        padding: 10px 50px;
+        font-size: 2rem;
+        border-radius: 30px !important;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+    }
+
+    .login-container {
+        padding-top: 100px;
+    }
+
+    &__login {
+        background-image: url(https://dragonlearn.in/assets/matwey/india/intro-f57dbd5f8dc5ec95f8aed7398c415f99.jpg);
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .introduce {
+            h1 {
+                font-weight: 700;
+                font-size: 3rem;
+            }
+            p {
+                font-size: 2rem;
+            }
+
+            button {
+                padding: 10px 50px;
+                font-size: 2rem;
+            }
+        }
+
+        .login {
+            // margin: 0 50px;
+            padding: 50px 50px;
+            background-color: #ff5767;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 500;
+                letter-spacing: 1.5px;
+            }
+            
+            input, button {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .howtostart {
+        padding: 50px 0;
+        h2 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        iframe {
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgb(78, 73, 73);
+        }
+    }
+
+    .tasks {
+        h3 {
+            color: #fff;
+        }
+        padding: 50px 50px 10px;
+        background-color: #ff5767;
+        border-radius: 20px;
+        .task-thumnail {
+            position: relative;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 10px;
+            .icon {
+                position: absolute;
+                top: 45%;
+                left: 45%;
+                transition: all 0.5s;
+            }
+
+            &:hover .icon {
+                transform: scale(2);
+            }
+        }
+        p {
+            font-weight: 600;
+            padding-top: 5px;
+        }
+
+        
+    }
+
+    .container-fluid {
+        background-color: #f1f2f0;
+        padding-top: 50px;
+    }
+
+    .example-tasks {
+        
+        h2 {
+            font-weight: 700;
+            font-size: 3rem;
+        }
+        .task-introduce {
+            img {
+                height: 100px;
+            }
+            p {
+                margin-left: 20px;
+                font-weight: 400;
+                font-size: 1.2rem;
+
+            }
+        }
+        button {
+            padding: 10px 50px;
+            font-size: 2rem;
+        }
+    }
+
+    .teacher-introduce {
+        width: 100%;
+        background-color: #20354E;
+        color: #fff;
+        background-image: url(https://dragonlearn.in/assets/matwey/india/superman-834986a97c03b92b5336f2ac7c95f7a7.svg);
+        background-position-y: right;
+        background-position-x: bottom;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
