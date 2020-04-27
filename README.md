@@ -1,8 +1,10 @@
 # Drangonlearn v1.0.0
 Dự án xây dựng phần mềm học tập trên nền tảng web app.
+
 Môn học : Công nghệ phầm mềm - Thầy Trương Anh Hoàng
+
 ![Drangonlearn.io](https://dragonlearn.in/assets/matwey/india/dino-0cd466ff32f9897b40d94c215b84b655.svg)
-# Các chức năng cơ bản
+# Các chức năng
  - [x] Login.
  - [x] Register.
  - [x] Game 1: Write fraction picture.
@@ -13,15 +15,15 @@ Môn học : Công nghệ phầm mềm - Thầy Trương Anh Hoàng
 ## Các công nghệ được ứng dụng
 
  1. Server
- - [ ] Nodejs + Express framework.
- - [ ] Database: Mongodb/mongoose (Atlas).
+ - [x] Nodejs + Express framework.
+ - [x] Database: Mongodb/mongoose (Atlas).
  2. Client
- - [ ] Thư viện ReactJs (react & react-router-dom)
- - [ ] Bootstrap 4.4
- - [ ] Fontawesome.
- - [ ] Axios
- - [ ] Js-Cookie
- - [ ] Node Sass
+ - [x] Thư viện ReactJs (react & react-router-dom)
+ - [x] Bootstrap 4.4
+ - [x] Fontawesome.
+ - [x] Axios
+ - [x] Js-Cookie
+ - [x] Node Sass
 
 ## Cài đặt
 
