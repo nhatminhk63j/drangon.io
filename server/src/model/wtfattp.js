@@ -8,5 +8,6 @@ var wtfattp_data = new Schema({
 });
 
 wtfattp_data.index({ ts: 1, ms: 1, path: 1 }, { unique: true });
-var WtfattpData = mongoose.model('WtfattpData', wtfattp_data);
-module.exports = WtfattpData; 
+
+var WtfattpModel = mongoose.model('Wtfattp', wtfattp_data);
+module.exports = WtfattpModel; 
