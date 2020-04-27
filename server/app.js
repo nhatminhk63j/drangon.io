@@ -25,11 +25,16 @@ app.use(bodyParser.json());
 
 //Image wtfattp 
 app.use('/image/wtfattp', express.static(__dirname + '/image/wtfattp'));
+app.use('/image/mfap', express.static(__dirname + '/image/mfap'));
 
 ///Game
 app.use('/game', game_router);
+/// Write the fraction according to the picture
 game_router.post('/wtfattp/create_data', game_controller.create_wtfattp_data);
 game_router.get('/wtfattp', game_controller.wtfattp);
+/// Matching Figures And Pictures
+game_router.post('/mfap/create_data', game_controller.create_mfap_data);
+game_router.get('/mfap', game_controller.mfap);
 
 ///User
 app.use('/user', user_router);
