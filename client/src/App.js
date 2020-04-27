@@ -7,6 +7,7 @@ import Home from './containers/Home/Home';
 import {isLogin} from './auth/userAuth';
 import {Redirect} from 'react-router-dom'
 import PartsAndFractions from './containers/PartsAndFractions';
+import Register from './containers/Register/Register';
 
 
 function App() {
@@ -14,10 +15,12 @@ function App() {
     <Switch>
       <Route exact path="/write-the-fraction-according-to-the-picture" component={WriteFractionPicture} />
       <Route exact path="/matching-figures-and-pictures" component={  MatchingFiguresAndPictures} />
+
       <PrivateRoute exact path="/courses/parts-and-fractions">
         <PartsAndFractions />
       </PrivateRoute>
       <Route exact path="/" component={Home} />
+      <Route exact path="/register" component={Register} />
     </Switch>
   );
 }
