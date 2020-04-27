@@ -4,6 +4,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            email: '',
+            password: ''
+        }
+    }
+
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    login = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+    }
+
     render() {
         return (
             <div className="home">
@@ -24,12 +44,12 @@ class Home extends Component {
                                 <h2>Drangonlearn.io</h2>
                                 <form>
                                 <div className="form-group">
-                                        <input type="email" name="email" className="form-control" id="exampleInputEmail" placeholder="Email" />
+                                        <input type="email" name="email" className="form-control" id="exampleInputEmail" placeholder="Email" onChange={this.onChange} value={this.state.email} />
                                     </div>
                                     <div className="form-group">
-                                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                        <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.onChange} value={this.state.password} />
                                     </div>
-                                    <button className="btn btn-success btn-block">Login</button>
+                                    <button className="btn btn-success btn-block" onClick={this.login}>Login</button>
                                 </form>
                             </div>
                         </div>
@@ -73,34 +93,34 @@ class Home extends Component {
 
                                         <div className="col-md-6">
                                             <a href="/game1">
-                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_1-a65fc644cb8de77bf3985a6c4d9704bf.png)', width: '100%', height: '100px'}}>
+                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_2-0568c53a3e0f8f0c206d3057283f574f.png)', width: '100%', height: '100px'}}>
                                                     <FontAwesomeIcon className="icon" icon={faPlay} />
                                                 </div>
                                             </a>
                                             <p className="task-description text-center">
-                                                Who has more block
+                                                Fill in the number
                                             </p>
                                         </div>
 
                                         <div className="col-md-6">
                                             <a href="/game1">
-                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_1-a65fc644cb8de77bf3985a6c4d9704bf.png)', width: '100%', height: '100px'}}>
+                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_3-8f2718fcc4d91344d22cfd6d5dd8099e.png)', width: '100%', height: '100px'}}>
                                                     <FontAwesomeIcon className="icon" icon={faPlay} />
                                                 </div>
                                             </a>
                                             <p className="task-description text-center">
-                                                Who has more block
+                                                Perimeters  
                                             </p>
                                         </div>
 
                                         <div className="col-md-6">
                                             <a href="/game1">
-                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_1-a65fc644cb8de77bf3985a6c4d9704bf.png)', width: '100%', height: '100px'}}>
+                                                <div className="task-thumnail" style={{backgroundImage: 'url(https://dragonlearn.in/assets/matwey/india/sample_4-81a0347f758ebf2c7c6664bab8fc1dad.png)', width: '100%', height: '100px'}}>
                                                     <FontAwesomeIcon className="icon" icon={faPlay} />
                                                 </div>
                                             </a>
                                             <p className="task-description text-center">
-                                                Who has more block
+                                                Parts
                                             </p>
                                         </div>
                                     </div>
