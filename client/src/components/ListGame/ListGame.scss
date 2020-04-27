@@ -1,5 +1,21 @@
 .listgame {
-    display: inline-block;
-    max-width: 750px;
-    margin-top: 10vh;
+    margin-top: 30px;
+
+    h4 {
+        font-weight: 600;
+        color: rgb(29, 27, 27);
+        font-size: 1.5rem;
+    }
+
+    .breadcrumb {
+        background-color: #fff;
+
+        a {
+            text-decoration: none;
+            color: rgb(29, 27, 27);
+            &:hover {
+                color: #FF5D6A;
+            }
+        }
+    }
 }

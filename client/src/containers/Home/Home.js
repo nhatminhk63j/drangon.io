@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import userApi from '../../api/userApi';
+import { setUserToken, isLogin } from '../../auth/userAuth';
+import { Redirect } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props){
@@ -9,7 +12,8 @@ class Home extends Component {
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            error: ''
         }
     }
 
@@ -21,10 +25,36 @@ class Home extends Component {
 
     login = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        const {email, password} = this.state;
+        if(!password) this.setState({error: '* password is required!'});
+        if(!email) this.setState({error: '* email is required!'});
+        if(password && email) {
+            userApi.login(JSON.stringify({
+                email: email,
+                password: password
+            })).then(res => {
+                if(res.data.cookies){
+                    setUserToken(res.data.cookies);
+                    const {history, location} = this.props;
+                    var from = {pathname: '/courses'};
+                    if(location.state){
+                        from = location.state.from;
+                    }
+                    sessionStorage.setItem("user", JSON.stringify({
+                        email: email,
+                        name: res.data.user[0].name,
+                        id: res.data.user[0].id
+                    }))
+                    history.replace(from);
+                } else {
+                    this.setState({error: 'Email or password is not correct!'});
+                }
+            })
+        }
     }
 
     render() {
+        if(isLogin()) return <Redirect to="/parts-and-fractions" />
         return (
             <div className="home">
                 <div className="home__header">
@@ -49,6 +79,7 @@ class Home extends Component {
                                     <div className="form-group">
                                         <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.onChange} value={this.state.password} />
                                     </div>
+                                    <p> {this.state.error} </p>
                                     <button className="btn btn-success btn-block" onClick={this.login}>Login</button>
                                 </form>
                             </div>

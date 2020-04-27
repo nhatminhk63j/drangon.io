@@ -1,35 +1,50 @@
 import React, { Component } from 'react';
 import './SideBarMenu.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 
 class SideBarMenu extends Component {
+    constructor(props){
+        super(props);
+    }
     render() {
+        
         return (
-                <div className="sidebar">
-                    <h5><FontAwesomeIcon icon={faGraduationCap} /> My courses </h5> 
-                    <nav className="navbar">
-                        <ul className="sidebar__menu text-left nav navbar-nav">
-                            <li className="nav-item">
-                                <a className="sidebar__link" href="/number">Numbers</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="sidebar__link" href="/fractions">Fractions</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="sidebar__link active" href="/decimal-fractions-and-percentage">Decimal fractions and percentage</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="sidebar__link" href="/measurement">Measurement</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="sidebar__link" href="/data-handing">Data handing</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+            <div className="sidebar">
+                <a className="direction" href='/'>
+                    <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
+                    <span>Back</span>
+                </a>
+                <ul class="list-group">
+                    <a href="/number" 
+                        className={this.props.category === 1 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                    >Number</a>
+                    <a href="/parts-and-fractions" 
+                        className={this.props.category === 2 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                    >Parts and fractions</a>
+                    <a href="/decimal-fractions-and-percentage" 
+                        className={this.props.category === 3 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                    >Decimal fractions and percentage</a>
+                    <a href="/measurement" 
+                        className={this.props.category === 4 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                    >Measurement</a>
+                    <a href="/data-handling" 
+                        className={this.props.category === 5 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                    >Data handling</a>
+                    <a href="/secret-lab" 
+                        className={this.props.category === 6 ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+                        style={{
+                            backgroundImage: 'url(https://dragonlearn.in/assets/icons/laba-9a059bb2ed9520cc70ef3a7da265cf0a.svg)',
+                            backgroundPositionX: 'right',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundColor: '#e9f9f8'
+                        }}
+                    >Secret lab</a>
+                    
+                </ul>
+            </div>
         );
     }
 }

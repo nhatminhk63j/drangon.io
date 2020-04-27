@@ -32,6 +32,15 @@ class ListGame extends Component {
         return (
             <BrowserRouter>
                 <div className="text-center listgame">
+                    <nav aria-label="breadcrumb">
+                        <ol className="breadcrumb">
+                        <li className="breadcrumb-item"><a href="#">Home</a></li>
+                        <li className="breadcrumb-item"><a href="#">Courses</a></li>
+                        <li className="breadcrumb-item active" aria-current="page" style={{textTransform: 'capitalize'}}>
+                            {window.location.pathname.split('/').join('').split('-').join(' ')}
+                        </li>
+                        </ol>
+                    </nav>
                     <h4>{this.props.category}</h4>
                     <div className="row">
                         {this.state.games.map(game => {

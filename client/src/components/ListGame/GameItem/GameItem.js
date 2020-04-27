@@ -11,7 +11,7 @@ class GameItem extends Component {
     render() {
         return (
             
-            <div className="col-md-4 game">
+            <div className="col-md-3 game">
                 <a href={convertlink(this.props.name)}>
                     <div className="game__thumnail">
                         <img className="game__thumnail_img" src={this.props.img} alt="game-thumnail" width="100%" />

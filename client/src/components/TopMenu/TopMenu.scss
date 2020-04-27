@@ -1,18 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .topmenu__back{
-    background-color: rgb(66, 63, 85);
-    color: #fff;
+    background-color: #eee;
+    color: gray;
+    color: rgb(29, 24, 24) !important;
+
+    .btn-link {
+        border: 1px solid #FF5D6A;
+        border-radius: 5px;
+        color: #FF5D6A;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+            background-color: #FF5D6A;
+        }
+    }
 }
 
 .topmenu__logo{
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
     font-weight: bolder;
+    color: black !important;
 }
 
 .user__avatar__img{
-    border: 5px solid rgba($color: #f8efef, $alpha: 1.0);
+    border: 5px solid rgba($color: #aaa, $alpha: 1.0);
     border-radius: 50%;
 }
 
@@ -22,4 +36,14 @@
 
 .user__icon{
     font-size: 1.3rem;
+}
+
+.topmenu_link {
+    color: rgb(29, 24, 24) !important;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+
+.banner {
+    background-color: #097EC6;
 }
