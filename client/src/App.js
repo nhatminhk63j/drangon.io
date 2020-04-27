@@ -14,7 +14,7 @@ function App() {
     <Switch>
       <Route exact path="/write-the-fraction-according-to-the-picture" component={WriteFractionPicture} />
       <Route exact path="/matching-figures-and-pictures" component={  MatchingFiguresAndPictures} />
-      <PrivateRoute exact path="/parts-and-fractions">
+      <PrivateRoute exact path="/courses/parts-and-fractions">
         <PartsAndFractions />
       </PrivateRoute>
       <Route exact path="/" component={Home} />

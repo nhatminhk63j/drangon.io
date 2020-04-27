@@ -1,10 +1,6 @@
 .background-game {
     width: 100vw;
     height: 100vh;
-
-    background-image: url(../../assets/backgroundGame.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -13,13 +9,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    .bg-cell {
+        background-image: url(https://content.dragonlearn.in/fp/97/fat_player/student/cell-9987ae00289f116cf6d1f23d1049820f01c1000c534cc1c39d9060882f80063d.png);
+        z-index: 1;
+    }
 
-    &::after{
-        content: '';
+    .bg-color, .bg-cell, .bg-stuff {
         width: 100%;
         height: 100%;
-        background-color: rgba(175, 135, 216, 0.5);
         position: absolute;
-        z-index: 1001;
+        top: 0;
+    }
+
+    .bg-color {
+        background-image: url(https://content.dragonlearn.in/fp/97/fat_player/student/color-e875c1aeb80984feaea35e9206d56248ed77eb16feede64477bc68b08df59e29.png);
+        z-index: 0;
+    }
+
+    .bg-stuff {
+        background-image: url(https://content.dragonlearn.in/fp/97/fat_player/student/stuff-124d4f39a55f743d41ae005514723d90ae7e61faaf258f2187335151d10556b3.png);
+        z-index: 2;
     }
 }

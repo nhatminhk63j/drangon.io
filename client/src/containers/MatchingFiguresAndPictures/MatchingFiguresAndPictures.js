@@ -15,7 +15,9 @@ class MatchingFiguresAndPictures extends Component {
             styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {left: 75}, {left: 100} ],
             listPicture: {},
             displayMoreValueTrue: false,
-            displayNotify: false
+            displayNotify: false,
+            playButton: true,
+            mainGameOpacity: 0.2
         }
 
     }
@@ -51,7 +53,7 @@ class MatchingFiguresAndPictures extends Component {
                 }
             }
         }
-        if(countResultTrue === data[status].numberTrue){
+        if(countResultTrue === data[status].numberTrue && inCorrect===0){
             if(status === 0) this.setState({styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {left: 75}, {right: 2} ]});
             if(status === 1) this.setState({styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {right: 25}, {right: 2} ]});
             if(status === 2) this.setState({styleBall: [ { left: 2 },{ left: 25}, {right: 50}, {right: 25}, {right: 2} ]});
@@ -67,13 +69,25 @@ class MatchingFiguresAndPictures extends Component {
         }
     }
 
+    onClickButtonPlay = () => {
+        this.setState({
+            playButton: false,
+            mainGameOpacity: 1
+        })
+    }
+
     render() {
         const {data, styleBall, status, displayMoreValueTrue, displayNotify} = this.state;
         return (
             <BackgroundGame>
                 <div className="game-wrapper matching-pictures">
+                    {this.state.playButton && (
+                        <div className="play-wrapper">
+                            <img onClick={this.onClickButtonPlay} src="https://princessjanaeplace.org/images/2018/06/22/icon_play-button_homepage-carousel_purple.png" alt=""/>
+                        </div>
+                    )}
                     <div className="game-control">
-                        <a href="/"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
+                        <a href="/courses/parts-and-fractions"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
                         {/* Hien thi thanh trang thai progress bar */}
                         <div className="game-status">
                             {styleBall.map((style, index) => {
@@ -91,7 +105,7 @@ class MatchingFiguresAndPictures extends Component {
                         </div>
                     </div>
 
-                    <div className="game-main text-center"  style={this.state.status < 5 ? {} : {display: "none"}}>
+                    <div className="game-main text-center"  style={this.state.status < 5 ? {opacity: this.state.mainGameOpacity} : {display: "none"}}>
                         <h2>Choose all the shapes that match the fraction</h2>
                         {data[status] ? <div className="fraction d-flex align-items-center flex-column">
                             <h2 className="fraction-ts"> {data[status].ts} </h2>

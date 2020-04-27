@@ -39,9 +39,13 @@
 }
 
 .topmenu_link {
-    color: rgb(29, 24, 24) !important;
+    color: rgb(66, 64, 64) !important;
     text-transform: uppercase;
-    font-weight: 550;
+    font-weight: 600;
+
+    &:hover{
+        color: #FF5D6A !important;
+    }
 }
 
 .banner {

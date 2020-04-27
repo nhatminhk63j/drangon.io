@@ -13,7 +13,8 @@ class Home extends Component {
         this.state = {
             email: '',
             password: '',
-            error: ''
+            error: '',
+            isLogining: false
         }
     }
 
@@ -25,6 +26,7 @@ class Home extends Component {
 
     login = (e) => {
         e.preventDefault();
+        this.setState({isLogining: true});
         const {email, password} = this.state;
         if(!password) this.setState({error: '* password is required!'});
         if(!email) this.setState({error: '* email is required!'});
@@ -36,7 +38,7 @@ class Home extends Component {
                 if(res.data.cookies){
                     setUserToken(res.data.cookies);
                     const {history, location} = this.props;
-                    var from = {pathname: '/courses'};
+                    var from = {pathname: '/courses/parts-and-fractions'};
                     if(location.state){
                         from = location.state.from;
                     }
@@ -46,15 +48,17 @@ class Home extends Component {
                         id: res.data.user[0].id
                     }))
                     history.replace(from);
+                    return;
                 } else {
-                    this.setState({error: 'Email or password is not correct!'});
+                    this.setState({error: 'Email or password is not correct!', isLogining: false});
                 }
             })
         }
+        else this.setState({isLogining: false});
     }
 
     render() {
-        if(isLogin()) return <Redirect to="/parts-and-fractions" />
+        if(isLogin()) return <Redirect to="/courses/parts-and-fractions" />
         return (
             <div className="home">
                 <div className="home__header">
@@ -79,7 +83,12 @@ class Home extends Component {
                                     <div className="form-group">
                                         <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={this.onChange} value={this.state.password} />
                                     </div>
-                                    <p> {this.state.error} </p>
+                                    <p className="text-center"> {this.state.error} </p>
+                                    <p className="text-center">{this.state.isLogining && (
+                                        <div class="spinner-border text-light text-center" role="status">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    )}</p>
                                     <button className="btn btn-success btn-block" onClick={this.login}>Login</button>
                                 </form>
                             </div>

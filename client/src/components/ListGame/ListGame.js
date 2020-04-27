@@ -37,7 +37,7 @@ class ListGame extends Component {
                         <li className="breadcrumb-item"><a href="#">Home</a></li>
                         <li className="breadcrumb-item"><a href="#">Courses</a></li>
                         <li className="breadcrumb-item active" aria-current="page" style={{textTransform: 'capitalize'}}>
-                            {window.location.pathname.split('/').join('').split('-').join(' ')}
+                            {window.location.pathname.split('/').slice(2).join('').split('-').join(' ')}
                         </li>
                         </ol>
                     </nav>

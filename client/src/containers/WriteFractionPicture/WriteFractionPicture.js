@@ -13,7 +13,9 @@ class WriteFractionPicture extends Component {
             data: dataFromBackend,
             styleWrongTop: { alert: { display: "none" }, color: { color: "black" }},
             styleWrongBottom: { alert: { display: "none" }, color: { color: "black" } },
-            styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {left: 75}, {left: 100} ]
+            styleBall: [ { left: 2 },{ left: 25}, {left: 50}, {left: 75}, {left: 100} ],
+            playButton: true,
+            mainGameOpacity: 0.2
         }
 
         this.doneButtonClick = this.doneButtonClick.bind(this);
@@ -47,13 +49,25 @@ class WriteFractionPicture extends Component {
 
     }
 
+    onClickButtonPlay = () => {
+        this.setState({
+            playButton: false,
+            mainGameOpacity: 1
+        })
+    }
+
 
     render() {
         return (
             <BackgroundGame>
                 <div className="game-wrapper">
+                    {this.state.playButton && (
+                        <div className="play-wrapper">
+                            <img onClick={this.onClickButtonPlay} src="https://princessjanaeplace.org/images/2018/06/22/icon_play-button_homepage-carousel_purple.png" alt=""/>
+                        </div>
+                    )}
                     <div className="game-control">
-                        <a href="/"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
+                        <a href="/courses/parts-and-fractions"><FontAwesomeIcon icon={faAngleLeft} /> Back</a>
                         <div className="game-status">
                             {this.state.styleBall.map(style => {
                                 return <div className="ball" style={style}></div>
@@ -69,7 +83,8 @@ class WriteFractionPicture extends Component {
                         </div>
                     </div>
 
-                    <div className="game-main text-center"  style={this.state.status < 5 ? {} : {display: "none"}}>
+                    <div className="game-main text-center"  style={this.state.status < 5 ? {opacity: this.state.mainGameOpacity} : {display: "none"}}>
+                        
                         <h2>How much of the figure is shaded?</h2>
                         <div className="d-flex justify-content-center align-items-center">
                             <img src={ this.state.status < 5 ? this.state.data[this.state.status].img : ''} height="200px" alt=""/> 
