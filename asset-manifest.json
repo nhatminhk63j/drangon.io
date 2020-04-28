@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.5662e61e.chunk.css",
-    "main.js": "/static/js/main.1e34ebeb.chunk.js",
-    "main.js.map": "/static/js/main.1e34ebeb.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.cfae3202.js",
-    "runtime-main.js.map": "/static/js/runtime-main.cfae3202.js.map",
-    "static/css/2.89f067aa.chunk.css": "/static/css/2.89f067aa.chunk.css",
-    "static/js/2.0dda80d8.chunk.js": "/static/js/2.0dda80d8.chunk.js",
-    "static/js/2.0dda80d8.chunk.js.map": "/static/js/2.0dda80d8.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.9f5df9d22846f53125e94d003c2258e7.js": "/precache-manifest.9f5df9d22846f53125e94d003c2258e7.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.89f067aa.chunk.css.map": "/static/css/2.89f067aa.chunk.css.map",
-    "static/css/main.5662e61e.chunk.css.map": "/static/css/main.5662e61e.chunk.css.map",
-    "static/js/2.0dda80d8.chunk.js.LICENSE.txt": "/static/js/2.0dda80d8.chunk.js.LICENSE.txt"
+    "main.css": "/drangonlearn.io/static/css/main.5662e61e.chunk.css",
+    "main.js": "/drangonlearn.io/static/js/main.7bbc1990.chunk.js",
+    "main.js.map": "/drangonlearn.io/static/js/main.7bbc1990.chunk.js.map",
+    "runtime-main.js": "/drangonlearn.io/static/js/runtime-main.2f484232.js",
+    "runtime-main.js.map": "/drangonlearn.io/static/js/runtime-main.2f484232.js.map",
+    "static/css/2.89f067aa.chunk.css": "/drangonlearn.io/static/css/2.89f067aa.chunk.css",
+    "static/js/2.0dda80d8.chunk.js": "/drangonlearn.io/static/js/2.0dda80d8.chunk.js",
+    "static/js/2.0dda80d8.chunk.js.map": "/drangonlearn.io/static/js/2.0dda80d8.chunk.js.map",
+    "index.html": "/drangonlearn.io/index.html",
+    "precache-manifest.572342e53dda17cfde7e8319fa353ceb.js": "/drangonlearn.io/precache-manifest.572342e53dda17cfde7e8319fa353ceb.js",
+    "service-worker.js": "/drangonlearn.io/service-worker.js",
+    "static/css/2.89f067aa.chunk.css.map": "/drangonlearn.io/static/css/2.89f067aa.chunk.css.map",
+    "static/css/main.5662e61e.chunk.css.map": "/drangonlearn.io/static/css/main.5662e61e.chunk.css.map",
+    "static/js/2.0dda80d8.chunk.js.LICENSE.txt": "/drangonlearn.io/static/js/2.0dda80d8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.cfae3202.js",
+    "static/js/runtime-main.2f484232.js",
     "static/css/2.89f067aa.chunk.css",
     "static/js/2.0dda80d8.chunk.js",
     "static/css/main.5662e61e.chunk.css",
-    "static/js/main.1e34ebeb.chunk.js"
+    "static/js/main.7bbc1990.chunk.js"
   ]
 }
