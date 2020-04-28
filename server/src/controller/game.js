@@ -46,8 +46,9 @@ module.exports.create_mfap_data = async (req, res, next) => {
 
 module.exports.mfap = async (req, res, next) => {
     try {
-        let data = await MfapModel.aggregate([
-            { $sample: { size: 4 } },
+        //// Note : size đợi data
+        let temp = await MfapModel.aggregate([
+            { $sample: { size: 8 } },
             {
                 $project: {
                     link: { $concat: ['http://localhost:3001', '$path'] },
@@ -57,17 +58,25 @@ module.exports.mfap = async (req, res, next) => {
                 }
             }
         ]);
-
-        var rand = Math.floor(Math.random() * 4);
         var result = [];
-
-        for (const element of data) {
-            if (element.ts == data[rand].ts && element.ms == data[rand].ms) {
-                result.push(element);
+        for (var i = 0; i < 8; i = i + 4) {
+            let object = new Object({
+                ts: temp[i].ts,
+                ms: temp[i].ms,
+                numberTrue: 0,
+                data: []
+            });
+            for (let j = i; j < i + 4; j++) {
+                object.data.push(temp[j]);
+                if (temp[j].ts == object.ts && temp[j].ms == object.ms) {
+                    object.numberTrue++;
+                }
             }
+            result.push(object);
         }
 
-        handleSuccess(res, 'Lấy game data thành công', { all: data, result: result });
+        console.log(result);
+        handleSuccess(res, 'Lấy game data thành công', result);
     } catch (error) {
         console.log(error);
         next(error);
