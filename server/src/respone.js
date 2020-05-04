@@ -5,7 +5,7 @@ exports.handleSuccess = async function ( res, message = '', data = '' ) {
     message: message,
     data: data
   });
-}
+};
 
 // Handle error here
 exports.handleError = async function ( res, message = '' ) {
@@ -13,4 +13,4 @@ exports.handleError = async function ( res, message = '' ) {
     code: 'error',
     message: message
   });
-}
+};
