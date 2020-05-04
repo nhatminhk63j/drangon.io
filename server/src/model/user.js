@@ -7,7 +7,7 @@ var user_schema = new Schema({
   password: { type: String, required: true },
 });
 
-user_schema.index({ email: 1, name: 1 }, { unique: 1 })
+user_schema.index({ email: 1, name: 1 }, { unique: 1 });
 // user_schema.index({ email: 1 }, { unique: 1 });
 
 user_schema.post('save', function (error, user, next) {
