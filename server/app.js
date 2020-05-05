@@ -2,10 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-let user = 'user1';
-let password = 'thisisuser';
-const port = 3001;
-const MONGO_URI = `mongodb+srv://${user}:${password}@dragonlearncluster-9aoa7.mongodb.net/dragonlearn?retryWrites=true&w=majority`;
+const config = require('./config');
 const app = express();
 
 const game_router = express.Router();
@@ -14,7 +11,7 @@ const game_controller = require('./src/controller/game');
 const user_router = express.Router();
 const user_controller = require('./src/controller/user');
 
-mongoose.connect(MONGO_URI, {
+mongoose.connect(config.MONGO_URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -50,4 +47,4 @@ db.once('open', function () {
 
 app.get('/', (req, res) => res.send('Dragon Learn'));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(config.port, () => console.log(`Example app listening on port ${config.port}!`));

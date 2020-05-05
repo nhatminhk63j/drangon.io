@@ -48,7 +48,7 @@ module.exports.mfap = async (req, res, next) => {
   try {
     //// Note : size đợi data
     let temp = await MfapModel.aggregate([
-      { $sample: { size: 8 } },
+      { $sample: { size: 20 } },
       {
         $project: {
           link: { $concat: ['http://localhost:3001', '$path'] },
