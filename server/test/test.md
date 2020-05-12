@@ -16,17 +16,24 @@ Hướng dẫn chạy test
  Ví dụ về eslint tìm lỗi ở code <img src = "../image/lint_find.png" size = "10">
 2. Mocha
  - Một công cụ đắc lực để có thể kiểm tra các hàm của code
+ 
 `npm run test`
+
 Hiện tại test đã có thể kiểm tra các tính năng sau
+
 a. Matching Figures And Pictures
+
  + Tạo game data
  + Check tạo trùng lặp game data
  + Lấy game data
 b. Write the fraction according to the picture
+
  + Tạo game data
  + Check tạo trùng lặp game data
  + Lấy game data
+ 
 c. User
+
  + Tạo User
  + Check trùng lặp user
 
