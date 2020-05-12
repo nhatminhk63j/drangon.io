@@ -47,9 +47,8 @@ module.exports.create_mfap_data = async (req, res, next) => {
 
 module.exports.mfap = async (req, res, next) => {
   try {
-    //// Note : size đợi data
     let temp = await MfapModel.aggregate([
-      { $sample: { size: 8 } },
+      { $sample: { size: 20 } },
       {
         $project: {
           link: { $concat: ['http://localhost:3001', '$path'] },
@@ -77,8 +76,8 @@ module.exports.mfap = async (req, res, next) => {
     }
 
     return res.send({
-      status:'success',
-      message:'Lấy dữ liệu game thành công',
+      status: 'success',
+      message: 'Lấy dữ liệu game thành công',
       result: result,
     });
   } catch (error) {
