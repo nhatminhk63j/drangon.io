@@ -7,7 +7,8 @@ module.exports.create_wtfattp_data = async (req, res, next) => {
     let body = req.body;
     let data = new WtfattpModel(body);
     await data.save();
-    handleSuccess(res, 'Tạo game data thành công', data);
+    res.status(201);
+    handleSuccess(res, 'Tạo dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -26,7 +27,7 @@ module.exports.wtfattp = async (req, res, next) => {
         }
       }
     ]);
-    handleSuccess(res, 'Lấy game data thành công', data);
+    handleSuccess(res, 'Lấy dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -37,7 +38,7 @@ module.exports.create_mfap_data = async (req, res, next) => {
     let body = req.body;
     let data = new MfapModel(body);
     await data.save();
-    handleSuccess(res, 'Tạo game data thành công', data);
+    handleSuccess(res, 'Tạo dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -48,7 +49,7 @@ module.exports.mfap = async (req, res, next) => {
   try {
     //// Note : size đợi data
     let temp = await MfapModel.aggregate([
-      { $sample: { size: 20 } },
+      { $sample: { size: 8 } },
       {
         $project: {
           link: { $concat: ['http://localhost:3001', '$path'] },
@@ -75,10 +76,12 @@ module.exports.mfap = async (req, res, next) => {
       result.push(object);
     }
 
-    console.log(result);
-    handleSuccess(res, 'Lấy game data thành công', result);
+    return res.send({
+      status:'success',
+      message:'Lấy dữ liệu game thành công',
+      result: result,
+    });
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };
