@@ -1,0 +1,20 @@
+Tech
+
+Mocha
+
+Hướng dẫn chạy test
+
+npm run test
+
+Test đã có thể kiểm tra
+- Matching Figures And Pictures
+ + Tạo game data
+ + Check tạo trùng lặp game data
+ + Lấy game data
+- Write the fraction according to the picture
+ + Tạo game data
+ + Check tạo trùng lặp game data
+ + Lấy game data
+- User
+ + Tạo User
+ + Check trùng lặp email

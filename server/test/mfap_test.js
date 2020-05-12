@@ -1,36 +1,75 @@
-/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-const assert = require('assert');
-const MfapModel = require('../src/model/mfap'); //imports the Pokemon model.
-
-function iThrowError() {
-  throw new Error('Error thrown');
-}
+/* eslint-disable no-undef */
+process.env.NODE_ENV = 'test';
+const MfapModel = require('../src/model/mfap');
 
 
-const obj = {
-  ts: Math.floor(Math.random() * 10),
-  ms: Math.floor(Math.random() * 10),
-  path: 'test path'
-};
-
-
-describe('Creating documents', () => {
-  it('creates a Mfap data', async (done) => {
-    var data = new MfapModel(...obj);
+describe('Matching Figures And Pictures', function () {
+  it('Create data', async () => {
+    let obj = {
+      ts: Math.floor(Math.random() * 10),
+      ms: Math.floor(Math.random() * 10),
+      path: 'test path'
+    };
+    let data = new MfapModel({ ts: obj.ts, ms: obj.ms, path: obj.path });
     await data.save();
-    await MfapModel.findOne(...obj, (data, err) => {
-      if (data) done();
-      else assert.throws(iThrowError(), Error, 'Không tìm thấy data');
+    await MfapModel.findOne({ ts: obj.ts, ms: obj.ms, path: obj.path }, async (err, doc) => {
+      if (err || !doc) throw Error('Error create data');
+      else {
+        await MfapModel.deleteOne({ _id: doc._id }).exec();
+      }
     });
   });
-});
 
-describe('Test conflict file', () => {
-  it('creates a dulicate data alaway return error', (done) => {
-    var data = new MfapModel(...obj);
-    data.save().then((error) => {
-      done();
+
+  it('Create 2 same data from api', async () => {
+    let obj = {
+      ts: Math.floor(Math.random() * 10),
+      ms: Math.floor(Math.random() * 10),
+      path: 'test path'
+    };
+    let data = new MfapModel({ ts: obj.ts, ms: obj.ms, path: obj.path });
+    await data.save();
+    await MfapModel.findOne({ ts: obj.ts, ms: obj.ms, path: obj.path }, async (err, doc) => {
+      if (err || !doc) throw Error('Error create data');
+      else {
+        let new_data = new MfapModel({ ts: obj.ts, ms: obj.ms, path: obj.path });
+        await new_data.save({}, async (err, product) => {
+          if (err) {
+            await MfapModel.deleteOne({ _id: doc._id }).exec();
+          }
+          if (product) throw Error('Error test 2');
+        });
+      }
     });
+  });
+  it('Get game data', async () => {
+    let temp = await MfapModel.aggregate([
+      { $sample: { size: 8 } },
+      {
+        $project: {
+          link: { $concat: ['http://localhost:3001', '$path'] },
+          ts: true,
+          ms: true,
+          _id: false
+        }
+      }
+    ]);
+    var result = [];
+    for (var i = 0; i < 8; i = i + 4) {
+      let object = new Object({
+        ts: temp[i].ts,
+        ms: temp[i].ms,
+        numberTrue: 0,
+        data: []
+      });
+      for (let j = i; j < i + 4; j++) {
+        object.data.push(temp[j]);
+        if (temp[j].ts == object.ts && temp[j].ms == object.ms) {
+          object.numberTrue++;
+        }
+      }
+      result.push(object);
+    }
   });
 });
