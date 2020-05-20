@@ -34,8 +34,8 @@ class ListGame extends Component {
                 <div className="text-center listgame">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="#">Home</a></li>
-                        <li className="breadcrumb-item"><a href="#">Courses</a></li>
+                        <li className="breadcrumb-item"><a href="/">Home</a></li>
+                        <li className="breadcrumb-item"><a href="/">Courses</a></li>
                         <li className="breadcrumb-item active" aria-current="page" style={{textTransform: 'capitalize'}}>
                             {window.location.pathname.split('/').slice(2).join('').split('-').join(' ')}
                         </li>

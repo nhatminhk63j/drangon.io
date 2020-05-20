@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TopMenu from '../components/TopMenu/TopMenu';
-import SideBarMenu from '../components/SideBarMenu/SideBarMenu';
 
 class DoardBoard extends Component {
     render() {

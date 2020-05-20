@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import userApi from '../../api/userApi';
 import { setUserToken, isLogin } from '../../auth/userAuth';
 import { Redirect } from 'react-router-dom';
@@ -99,7 +99,7 @@ class Home extends Component {
                 <div className="container">
                     <div className="howtostart text-center">
                         <h2>How to start using DRAGONLEARN.IO</h2>
-                        <iframe width="765" height="504" src="https://www.youtube.com/embed/VurkiXLG-WE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe title="video-intro" width="765" height="504" src="https://www.youtube.com/embed/VurkiXLG-WE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div className="container-fluid">

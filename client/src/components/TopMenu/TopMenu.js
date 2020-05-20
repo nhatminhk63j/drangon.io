@@ -35,8 +35,8 @@ class TopMenu extends Component {
                                         <FontAwesomeIcon className="user__icon" icon={faUser} />
                                     </div>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a className="dropdown-item" href="#">Profile</a>
-                                        <a className="dropdown-item" href="#" onClick={() => clearUserToken(() => '')}>Logout</a>
+                                        <a className="dropdown-item" href="/profile">Profile</a>
+                                        <a className="dropdown-item" href onClick={() => clearUserToken(() => '')}>Logout</a>
                                     </div>
                                 </div>
                             </div>

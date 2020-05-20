@@ -70,7 +70,7 @@ class Register extends Component {
     render() {
         if(isLogin()) return <Redirect to="/courses/parts-and-fractions" /> ;
 
-        const {errors, email, name, password, rePassword, alertSuccess} = this.state;
+        const {errors, email, name, password, rePassword} = this.state;
         return (
             <div className="register">
                 <div className="banner">

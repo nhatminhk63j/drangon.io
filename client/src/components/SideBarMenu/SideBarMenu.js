@@ -6,9 +6,7 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 class SideBarMenu extends Component {
-    constructor(props){
-        super(props);
-    }
+    
     render() {
         
         return (
