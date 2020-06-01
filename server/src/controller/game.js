@@ -1,4 +1,4 @@
-const { handleSuccess } = require('../respone');
+const { handle_success } = require('../respone');
 const WtfattpModel = require('../model/wtfattp');
 const MfapModel = require('../model/mfap');
 
@@ -8,7 +8,7 @@ module.exports.create_wtfattp_data = async (req, res, next) => {
     let data = new WtfattpModel(body);
     await data.save();
     res.status(201);
-    handleSuccess(res, 'Tạo dữ liệu game thành công', data);
+    handle_success(res, 'Tạo dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -27,7 +27,7 @@ module.exports.wtfattp = async (req, res, next) => {
         }
       }
     ]);
-    handleSuccess(res, 'Lấy dữ liệu game thành công', data);
+    handle_success(res, 'Lấy dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -38,7 +38,7 @@ module.exports.create_mfap_data = async (req, res, next) => {
     let body = req.body;
     let data = new MfapModel(body);
     await data.save();
-    handleSuccess(res, 'Tạo dữ liệu game thành công', data);
+    handle_success(res, 'Tạo dữ liệu game thành công', data);
   } catch (error) {
     next(error);
   }
@@ -60,19 +60,19 @@ module.exports.mfap = async (req, res, next) => {
     ]);
     var result = [];
     for (var i = 0; i < 8; i = i + 4) {
-      let object = new Object({
+      let data = {
         ts: temp[i].ts,
         ms: temp[i].ms,
         numberTrue: 0,
         data: []
-      });
+      };
       for (let j = i; j < i + 4; j++) {
-        object.data.push(temp[j]);
-        if (temp[j].ts == object.ts && temp[j].ms == object.ms) {
-          object.numberTrue++;
+        data.data.push(temp[j]);
+        if (temp[j].ts == data.ts && temp[j].ms == data.ms) {
+          data.numberTrue++;
         }
       }
-      result.push(object);
+      result.push(data);
     }
 
     return res.send({

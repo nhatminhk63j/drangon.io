@@ -1,5 +1,5 @@
 // Handle success here
-exports.handleSuccess = async function ( res, message = '', data = '' ) {
+exports.handle_success = async function ( res, message = '', data = '' ) {
   return res.send({
     status: 'success',
     message: message,
@@ -8,7 +8,7 @@ exports.handleSuccess = async function ( res, message = '', data = '' ) {
 };
 
 // Handle error here
-exports.handleError = async function ( res, message = '' ) {
+exports. = async function ( res, message = '' ) {
   return res.send({
     status: 'error',
     message: message
